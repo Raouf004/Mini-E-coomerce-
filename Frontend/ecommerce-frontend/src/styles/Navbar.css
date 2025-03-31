@@ -1,0 +1,45 @@
+/* Navbar Container */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9ef1bf; /* Blue navbar */
+    padding: 15px 20px;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgb(50, 62, 55);
+  }
+  
+  /* Logo (Store Name) */
+  nav h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Navigation Links */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  /* Links */
+  nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #ffcc00; /* Highlight effect on hover */
+    text-decoration: underline;
+  }
+  
