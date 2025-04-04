@@ -1,13 +1,12 @@
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import '../styles/Cart.css'
+import '../styles/Cart.css';
 
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
 
-  const getTotalPrice = () => cart.length > 0 
-      ? cart.reduce((total, item) => total + item.price * item.quantity, 0) 
-      : 0;
+  const getTotalPrice = () => 
+    cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
     <div className="cart">
@@ -18,21 +17,21 @@ const Cart = () => {
       ) : (
         <div>
           {cart.map((item) => (
-            <div key={item.id} className="cart-item">
+            <div key={item.id_product} className="cart-item">
               <h4>{item.name}</h4>
               <p>Price: ${item.price}</p>
               <p>
                 Quantity: 
                 <button 
-                  onClick={() => updateQuantity(item.id, item.quantity - 1)} 
+                  onClick={() => updateQuantity(item.id_product, item.quantity - 1)} 
                   disabled={item.quantity <= 1}
                 >
                   -
                 </button>
                 <span style={{ margin: "0 10px" }}>{item.quantity}</span>
-                <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
+                <button onClick={() => updateQuantity(item.id_product, item.quantity + 1)}>+</button>
               </p>
-              <button onClick={() => removeFromCart(item.id)}>Remove</button>
+              <button onClick={() => removeFromCart(item.id_product)}>Remove</button>
             </div>
           ))}
           <h3>Total: ${getTotalPrice().toFixed(2)}</h3>

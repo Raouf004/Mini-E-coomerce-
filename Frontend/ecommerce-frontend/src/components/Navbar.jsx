@@ -7,8 +7,9 @@ function Navbar() {
         <h2 className='italic'>Store</h2>
       <ul>
       <li><Link to="/">Home</Link></li>
+      <li><Link to="/category">Category</Link></li>
       <li><Link to="/cart">Cart</Link></li>
-      <li><Link to="/admin">Admin</Link></li>
+      <li><Link to="#footer">Contact</Link></li>
       </ul>
     </nav>
   )
